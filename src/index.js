@@ -9,10 +9,8 @@ app.get("/api/:date?", (req, res) => {
   const response = { unix: "", utc: "" };
   
   if (!date) {
-    let currentUTCTime = new Date().toUTCString();
-    let currentUnixTime = new Date();
-    response.utc = currentUTCTime;
-    response.unix = currentUnixTime;
+    response.utc  = new Date().toUTCString();
+    response.unix = new Date();
     return res.json(response);
   }
   
