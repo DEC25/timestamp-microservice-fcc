@@ -1,15 +1,14 @@
 {
   "name": "timestamp",
   "version": "1.0.0",
-  "description": "",
+  "description": "freecodecamp timestamp microservice project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "dec",
   "license": "ISC",
   "dependencies": {
     "body-parser": "1.20.2",
