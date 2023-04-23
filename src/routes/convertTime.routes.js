@@ -1,8 +1,9 @@
 const { Router } = require('express');
 const timeRouter = Router();
-const { unixAndUTCTime } = require('../controllers/convertTime.controllers');
+const { unixAndUTCTime, getCurrentTime } = require('../controllers/convertTime.controllers');
+const { verifyDateFormat } = require('../middlewares/dateFormat.middlewares');
 
-timeRouter.get('/', unixAndUTCTime);
-timeRouter.get('/:date', unixAndUTCTime);
+timeRouter.get('/', getCurrentTime);
+timeRouter.get('/:date', verifyDateFormat, unixAndUTCTime);
 
 module.exports = { timeRouter };
