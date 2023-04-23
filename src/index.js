@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const { timeRouter } = require('./routes/convertTime.routes');
 
@@ -8,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || 'localhost';
 
 // Config
+app.use(cors({ origin: ['https://www.freecodecamp.org'], optionsSuccessStatus: 200 }));
 app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
