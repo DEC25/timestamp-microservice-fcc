@@ -1,27 +1,27 @@
-require("dotenv").config();
-const express = require("express");
+require('dotenv').config();
+const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+const { timeRouter } = require('./routes/convertTime.routes');
 
 const PORT = process.env.PORT || 3000;
 
-app.get("/api/:date?", (req, res) => {
-  let { date } = req.params;
-  const response = { unix: "", utc: "" };
-  
-  if (!date) {
-    response.utc  = new Date().toUTCString();
-    response.unix = new Date();
-    return res.json(response);
-  }
-  
-  date = Number.parseInt(date);
-  
-  if (!date) return res.json({ error: 'Invalid Date' });
+// Config
+app.use(express.static(__dirname + '/views'));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-  response.unix = date;
-  response.utc = new Date(date).toUTCString();
-
-  res.json(response);
+// Routes
+app.get('/', (_req, res) => {
+  res.sendFile(__dirname + '/views/');
 });
+app.use('/api', timeRouter);
+
+// Not found
+app.use((_req, res) => {
+  res.json({
+    errorCode: 404,
+    message: 'Page not found'
+  }).end();
+})
 
 app.listen(PORT, console.log(`server is running on http://localhost:${PORT}`));

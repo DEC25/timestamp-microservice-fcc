@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/home.css">
+  <title>Timestamp Microservices</title>
+</head>
+<body>
+  <header class="center">
+    <h2>Timestamp Microservices</h2>
+  </header>
+  <article class="container">
+    <p>You can navigate to api/<i>< your_date ></i> from this site to get an unix and UTC format from your date</p>
+    <h3>Example usage:</h3>
+    <ul>
+      <li>
+        <div id="example1">Without date: </div>
+      </li>
+      <li>
+        <div id="example2">Date format yyyy-mm-dd: </div>
+      </li>  
+      <li>
+        <div id="example3">Date in unix format: </div>
+      </li>
+    </ul>
+    <h3>Example output:</h3>
+    <ul>
+      <li>{ "unix": 1682121600000, "utc": "Sat, 22 Apr 2023 00:00:00 GMT" }</li>
+      <li>{ "error": "Invalid Date" }</li>
+    </ul>
+  </article>
+  <footer>
+    <h5>Project for "Back End Development And APIs" certification</h5>
+  </footer>
+  <script src="./assets/scripts.js"></script>
+</body>
+</html>
