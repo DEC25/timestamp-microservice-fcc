@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const { timeRouter } = require('./routes/convertTime.routes');
 
 const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || 'localhost';
 
 // Config
 app.use(express.static(__dirname + '/views'));
@@ -24,4 +25,4 @@ app.use((_req, res) => {
   }).end();
 })
 
-app.listen(PORT, console.log(`server is running on http://localhost:${PORT}`));
+app.listen(PORT, console.log(`server is running on http://${HOST}:${PORT}`));
