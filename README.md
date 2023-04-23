@@ -19,15 +19,8 @@ cd ./timestamp
 npm install
 ```
 ## Running the project
-Finally, just run the server. You can do it in normal mode or dev mode:
+Finally, just run the server.
 
-- Normal mode
 ``` bash
 npm start
 ```
-
-- Dev mode
-``` bash
-npm run dev
-```
->The dev mode allows you to reload the project automatically when you save changes on the code without having to finish the server process. Using `nodemon` package
